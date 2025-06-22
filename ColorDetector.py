@@ -57,12 +57,11 @@ while True:
     pixel_hsv = cv2.cvtColor(np.uint8([[pixel_bgr]]), cv2.COLOR_BGR2HSV)[0][0]
     color_name = get_color_name(pixel_hsv[0], pixel_hsv[1], pixel_hsv[2])
 
-   cv2.putText(frame, f'Color: {color_name}', (10, 30),
-                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
+   cv2.putText(frame, f'Color: {color_name}', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
 
     cv2.imshow('Color Detector', frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('d'):
         break
 
 cap.release()
